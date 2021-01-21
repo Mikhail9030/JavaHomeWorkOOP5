@@ -3,11 +3,7 @@
 
 name: Java CI with Maven
 
-on:
-  push:
-    branches: [ homework1 ]
-  pull_request:
-    branches: [ homework1 ]
+on: [pull_request]
 
 jobs:
   build:
@@ -21,4 +17,4 @@ jobs:
       with:
         java-version: 11
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn -B -e verify
